@@ -7,7 +7,7 @@ function Home() {
     let [decks, setDecks] = useState([]);
 
     useEffect(() => {
-        listDecks().then(dataFromApi => setDecks(dataFromApi));
+        listDecks().then(data => setDecks(data));
     }, [])
 
 
@@ -24,7 +24,7 @@ function Home() {
             </div>
         )
     })
-
+    console.log(decks)
     return (
         <article className="">
             <Link to={`/decks/new`}><button className="btn btn-secondary mb-1 ">+ Create Deck</button></Link>

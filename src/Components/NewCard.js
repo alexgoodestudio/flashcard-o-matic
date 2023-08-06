@@ -1,30 +1,94 @@
-import React from "react";
-import { readDeck } from "../utils/api";
+import React, { useState, useEffect } from 'react';
+import {  useHistory, useParams } from 'react-router-dom';
+import { readDeck, createCard } from "../utils/api";
 
+function NewCard() {
+  // Get deckId from useParams hook
+  const { deckId } = useParams();
 
-function NewCard({id}){
+  const history = useHistory()
 
-
-return(
-    <>
-        <h3>{id}</h3>
-        <form>
-
-            <div className="form-group">
-            <label htmlFor="front"> Front</label>
-            <textarea className="form-control" name="front" placeholder="Front Side of Card"></textarea>
-            </div>
-
-            <div className="form-group">
-            <label htmlFor="back"> Back</label>
-            <textarea className="form-control" name="back" placeholder="Back Side of Card"></textarea>
-            </div>
-
-        </form>
-        <button className="btn btn-secondary mr-2">Done</button>
-        <button className="btn btn-primary">Save</button>
-    </>
-)
+  function handleDone(){
+    history.goBack();
 }
 
-export default NewCard
+  // Initialize state for deck and card using useState hook
+  const [deck, setDeck] = useState({});
+  const [card, setCard] = useState({ front: "", back: "" });
+
+  // Use useEffect hook to fetch deck data when component mounts
+  useEffect(() => {
+    // Call readDeck function and handle promise
+    readDeck(deckId)
+      .then(response => {
+        // When promise resolves, set deck state
+        setDeck(response);
+      })
+
+  }, [deckId]);
+
+  // Define handleChange function to update card state when input values change
+  const handleChange = ({ target }) => {
+    setCard({
+      ...card,
+      [target.name]: target.value,
+    });
+  };
+
+  // Define handleSubmit function to create new card when form is submitted
+  const handleSubmit = async (event) => {
+    // Prevent default form submission behavior
+    event.preventDefault();
+    try {
+      // Try to create new card using createCard function
+      await createCard(deckId, card);
+      // Reset card state to initial state
+      setCard({ front: "", back: "" });
+    } catch (error) {
+      // Catch and log any errors
+      console.error(error);
+    }
+  };
+
+  // Return JSX for NewCard component
+  return (
+    <>
+      {/* Display deck name in heading */}
+      <h3>{deck.name}: Add Card</h3>
+      {/* Form for new card */}
+      <form onSubmit={handleSubmit}>
+       
+          {/* Two columns for front and back inputs */}
+          
+            <label htmlFor="front">Front</label>
+            <textarea
+              className="form-control "
+              id="front"
+              name="front"
+              onChange={handleChange}
+              value={card.front}
+            />
+       
+            <label htmlFor="back">Back</label>
+            <textarea
+              className="form-control "
+              id="back"
+              name="back"
+              onChange={handleChange}
+              value={card.back}
+            />
+         
+     
+        {/* Save button to submit form */}
+        <button type="submit" className="btn btn-primary mt-2">
+          Save
+        </button>
+      </form>
+      {/* Done button outside form */}
+      <button className="btn btn-secondary mt-2" onClick={handleDone}>Done</button>
+    </>
+  );
+}
+
+// Export NewCard component
+export default NewCard;

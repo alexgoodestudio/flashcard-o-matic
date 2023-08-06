@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
-import {deleteDeck, listDecks, readDeck } from "../utils/api";
+import { deleteDeck, listDecks, readDeck } from "../utils/api";
 
 function ViewDeck() {
   const history = useHistory();
@@ -22,7 +22,7 @@ function ViewDeck() {
       deleteDeck(deck.id).then(() => history.push("/decks"));
     }
   }
-console.log(deck)
+  console.log(deck)
   return (
     <main className="container deck-view">
       <nav aria-label="breadcrumb">
@@ -54,28 +54,36 @@ console.log(deck)
         to={`/decks/${deck.id}/study`}
         className="btn btn-primary mr-2"
         title="Study deck"
-      > 
+      >
         <span className="oi oi-book" /> Study
       </Link>
       <Link
-        to={`/decks/${deck.id}/cards/new`}
+        to={{
+          pathname: `/decks/${deck.id}/cards/new`,
+          state: { deckName: deck.name }
+        }}
         className="btn btn-primary"
         title="Add Card"
-
       >
         <span className="oi oi-plus" /> Add Cards
       </Link>
       <button className="btn btn-danger float-right oi oi-trash" onClick={handleDelete} title="Delete deck"></button>
-      {deck.cards.map((card) => 
-      
-<div className="container card mt-4 p-4">
-  {card.front}
-  {card.back}
-  <div className="d-flex flex-column align-items-end justify-content-end">
-    <button className="btn btn-danger mb-2 oi oi-trash "></button>
-    <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary">Edit</Link>
-  </div>
-</div>
+      {deck.cards.map((card) =>
+
+        <div className="container card mt-4 p-4">
+          <div className="row">
+            <div className="col-5">
+          {card.front}
+          </div>
+          <div className="col-7">
+          {card.back}
+          </div>
+          </div>
+          <div className="d-flex flex-column align-items-end justify-content-end">
+            <button className="btn btn-danger mb-2 oi oi-trash "></button>
+            <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary">Edit</Link>
+          </div>
+        </div>
 
       )}
     </main>

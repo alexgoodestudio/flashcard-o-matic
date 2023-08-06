@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
-import { deleteDeck, listDecks, readDeck } from "../utils/api";
+import { deleteDeck, deleteCard, readDeck } from "../utils/api";
 
 function ViewDeck() {
   const history = useHistory();
@@ -22,6 +22,16 @@ function ViewDeck() {
       deleteDeck(deck.id).then(() => history.push("/decks"));
     }
   }
+
+  function deletingCard(cardId) {
+    const confirmed = window.confirm(
+      "Delete this Card?"
+    );
+    if (confirmed) {
+      deleteCard(cardId).then(() => loadDeck());;
+    }
+  }
+
   console.log(deck)
   return (
     <main className="container deck-view">
@@ -80,7 +90,7 @@ function ViewDeck() {
           </div>
           </div>
           <div className="d-flex flex-column align-items-end justify-content-end">
-            <button className="btn btn-danger mb-2 oi oi-trash "></button>
+            <button className="btn btn-danger mb-2 oi oi-trash " onClick={() => deletingCard(card.id)}  ></button>
             <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary">Edit</Link>
           </div>
         </div>

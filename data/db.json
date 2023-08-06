@@ -16,24 +16,9 @@
       "description": "LoremText"
     },
     {
-      "name": "asd",
-      "description": "asd",
-      "id": 9
-    },
-    {
-      "name": "Alex Goode",
-      "description": "user",
-      "id": 10
-    },
-    {
-      "name": "Karen",
-      "description": "hello",
-      "id": 11
-    },
-    {
-      "name": "Rob",
-      "description": "Goode",
-      "id": 12
+      "name": "BACK END SERVER",
+      "description": "nodeJS",
+      "id": 4
     }
   ],
   "cards": [

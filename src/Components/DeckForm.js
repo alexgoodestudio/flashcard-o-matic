@@ -1,8 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 //reusable form component
-
-//
 function DeckForm({
     onSubmit,
     onCancel,
@@ -13,7 +11,10 @@ function DeckForm({
     {
     const [deck, setDeck] = useState(initialFormState)
 
-    function handleChange({target:{name, value}}){
+    function handleChange(event){
+        const {target} = event
+        const {name, value} = target
+        // const name = event.target.name 
         setDeck((previousState) =>({
             ...previousState,
             [name]:value

@@ -7,18 +7,15 @@ function EditDeck() {
 
     const history = useHistory();
     const { deckId } = useParams();
-    const [deck, setDeck] = useState({ name: "", description: "" });
-
+    const [deck, setDeck] = useState({ name: "", description: ""});
 
     useEffect(() => {
         readDeck(deckId).then(setDeck)
     }, [deckId])
 
-
     function handleCancel() {
         history.goBack();
     }
-
 
     function handleSubmit( updatedDeck) {
         updateDeck(updatedDeck)

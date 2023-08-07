@@ -21,15 +21,15 @@
       "id": 6
     },
     {
-      "name": "html",
-      "description": "12",
+      "name": "asd",
+      "description": "asd",
       "id": 7
     }
   ],
   "cards": [
     {
       "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
-      "back": "All paths. A route with no path matches all URL's",
+      "back": "All paths. A route with no path matches all ",
       "deckId": 2,
       "id": 4
     },
@@ -40,7 +40,7 @@
       "id": 6
     },
     {
-      "front": "How do you modify the state of a different React component?",
+      "front": "How do you modify the state of a different React ",
       "back": "Not at all! State is visible to the component only.",
       "deckId": 5,
       "id": 7
@@ -62,6 +62,18 @@
       "back": "asdasd",
       "deckId": 5,
       "id": 12
+    },
+    {
+      "front": "asdasd",
+      "back": "asdasdasd",
+      "deckId": 6,
+      "id": 13
+    },
+    {
+      "front": "asdasdasd",
+      "back": "",
+      "deckId": 6,
+      "id": 14
     }
   ]
 }

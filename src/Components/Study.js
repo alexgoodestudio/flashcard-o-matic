@@ -1,52 +1,103 @@
 import React, { useState, useEffect } from "react";
 import Breadcrumb from "./Breadcrumb";
 import { readDeck } from "../utils/api";
-import { useParams } from "react-router-dom";
+import { useParams,  useHistory } from "react-router-dom";
 
 function Study() {
     const { deckId } = useParams();
     const [deck, setDeck] = useState({});
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [flip, setFlip] = useState(false);
+    const history = useHistory()
+    const initialState = {
+        index:0,
+        flipped: false,
+        viewed: false
+    }
+    const [session, setSession] = useState({...initialState})
+    
+    const handleFlipped = event => {
+        setSession({
+            ...session,
+            flipped: !session.flipped,
+            viewed: true
+        })
+    }
+    
+    const handleNext = event => {
+        setSession({
+            ...session,
+            index:session.index + 1,
+            flipped:false,
+            viewed: false
+        })
+    }
+
+    const handleReset = () => {
+        window.confirm(`Reset?`)
+        ? setSession(initialState)
+        : history.push("/")
+    }
+
 
     useEffect(() => {
         readDeck(deckId).then(data => setDeck(data));
     }, [deckId]);
 
-    const handleNext = () => {
-        if (currentIndex < deck.cards.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-            setFlip(false);
-        }
-    };
 
     if (!deck.cards) return <p>Loading...</p>;
 
-    const card = deck.cards[currentIndex];
+    const card = deck.cards[session.index];
 
     return (
         <div>
             <Breadcrumb deckName={deck.name} />
-            <h2>Study: {deck.name}</h2>
-            <div className="card p-5">
-                {flip ? <div className="d-block">
-                    <h3>{currentIndex + 1} of {deck.cards.length}</h3>
-                    {card.back}
-                    <div className="d-block">
-                        <button className="btn btn-primary ml-3" onClick={handleNext}>Next</button>
-                        <button className="btn btn-secondary m-3" onClick={() => setFlip(!flip)}>Flip</button>
-                    </div>
-                </div> :
-                    <div className="d-block">
-                        <h3>Card {currentIndex + 1} of {deck.cards.length}</h3>
-                        {card.front}
-                        <div className="d-block">
-                            <button className="btn btn-secondary m-3" onClick={() => setFlip(!flip)}>Flip</button>
-                        </div>
-                    </div>}
+            <div className="card-deck justify-content-center  mt-4 w-100">
+      
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">
+              Card {session.index + 1} of {deck.cards.length}
+            </h4>
+            <p className="card-text">
+              {session.flipped
+                ? deck.cards[session.index].back
+                : deck.cards[session.index].front}
+            </p>
+          </div>
+          <div className="card-footer">
+            <div className="btn-wrapper">
+              <button
+                className="btn btn-secondary mx-1 float-left"
+                style={{ width: "5rem" }}
+                onClick={handleFlipped}
+              >
+                Flip
+              </button>
+              {session.viewed && session.index < deck.cards.length - 1 ? (
+                <button
+                  className="btn btn-primary mx-1 float-right"
+                  style={{ width: "5rem" }}
+                  onClick={handleNext}
+                >
+                  Next
+                </button>
+              ) : (
+                session.viewed && (
+                  <button
+                    className="btn btn-primary mx-1 float-right"
+                    style={{ width: "5rem" }}
+                    onClick={handleReset}
+                  >
+                    Reset
+                  </button>
+                )
+              )}
             </div>
+          </div>
         </div>
-    );
+      </div>
+  
+    </div>
+    )
 }
 
 export default Study;

@@ -5,7 +5,7 @@ import { Link, useParams, useHistory } from 'react-router-dom'
 //------------------------------------------------------------------------
 
 function EditCard(){
-    const params= useParams()
+    const {deckId, cardId}= useParams()
 
     // Initialize state for deck and card u
     const [deck, setDeck] = useState({});
@@ -13,16 +13,16 @@ function EditCard(){
 
 //------------------------------------------------------------------------
 
-
+// useEffect(readDeck().then )
     // need useEffect to use readDeck, and readCard
     useEffect(() => {
         // Fetch the deck and card data when the component mounts
-        readDeck(params.deckId)
+        readDeck(deckId)
         .then(data => setDeck(data))
         .catch(error => console.error("Error fetching deck:", error));
-        readCard(params.cardId)
+        readCard(cardId)
             .then(data => setCard(data));
-    }, [params.deckId, params.cardId]);
+    }, [deckId, cardId]);
     
 
 
@@ -45,11 +45,13 @@ function EditCard(){
     // Define handleSubmit function to create new card when form is submitted
     const handleSubmit = (event) => {
         event.preventDefault();
-        updateCard(card.id, card)
-            .then(() => 
+        updateCard(card)
+            .then((data) => 
                 // back to the previous page
-                handleDone()
-            )
+                setCard(data)
+                // handleDone()
+                )
+                .then(() => history.push(`/decks/${deckId}`))
             .catch(error => {
                 console.error("Error updating card:", error);
                 if (error.json) {
@@ -73,7 +75,7 @@ function EditCard(){
             </Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            <Link to={`/deck/${params.deckId}`}>
+            <Link to={`/deck/${deckId}`}>
             {deck.name}
             </Link>
           </li>
@@ -85,7 +87,7 @@ function EditCard(){
         </ol>
       </nav>
 
-------------------------------------------------------------------------
+{/* ------------------------------------------------------------------------ */}
 
              {/* need deck name  */}
       <h3>{deck.name}: Add Card</h3>

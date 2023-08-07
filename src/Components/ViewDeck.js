@@ -32,7 +32,7 @@ function ViewDeck() {
     }
   }
 
-  console.log(deck)
+ 
   return (
     <main className="container deck-view">
       <nav aria-label="breadcrumb">

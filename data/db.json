@@ -11,14 +11,19 @@
       "description": "LoremText"
     },
     {
-      "name": "BACK END SERVER",
-      "description": "nodeJS",
-      "id": 4
-    },
-    {
       "name": "Rendering in React",
       "description": " \"React's component structure allows for quickly building a complex web application that relies on DOM manipulation. ",
       "id": 5
+    },
+    {
+      "name": "asdasd",
+      "description": "asdasdasdasdasd!!!!",
+      "id": 6
+    },
+    {
+      "name": "html",
+      "description": "12",
+      "id": 7
     }
   ],
   "cards": [
@@ -48,21 +53,9 @@
     },
     {
       "front": "asdasdasd",
-      "back": "asdasdasd",
-      "deckId": 3,
-      "id": 9
-    },
-    {
-      "front": "asdasdasd",
       "back": "asdasdasdasd",
       "deckId": 3,
       "id": 10
-    },
-    {
-      "front": "sdfsdf",
-      "back": "sdfsdfsdf",
-      "deckId": 4,
-      "id": 11
     },
     {
       "front": "asdasd",

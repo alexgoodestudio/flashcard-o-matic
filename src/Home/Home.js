@@ -38,7 +38,7 @@ function Home() {
     })
 
 
-    console.log(decks)
+
     return (
         <article>
             <Link to={`/decks/new`}><button className="btn btn-secondary mb-1 " >+ Create Deck</button></Link>

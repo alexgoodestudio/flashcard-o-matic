@@ -1,29 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import { readDeck, readCard, updateCard } from '../utils/api'
-import { Link, useParams } from 'react-router-dom'
-import { useHistory } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom'
+
+//------------------------------------------------------------------------
+
 
 function EditCard(){
     const params= useParams()
 
-    // Initialize state for deck and card using useState hook
+    // Initialize state for deck and card u
     const [deck, setDeck] = useState({});
     const [card, setCard] = useState({ front: "", back: "" });
 
+//------------------------------------------------------------------------
+
+
+    // need useEffect to use readDeck, and readCard
     useEffect(() => {
         // Fetch the deck and card data when the component mounts
         readDeck(params.deckId)
-            .then(deckData => setDeck(deckData));
-
+        .then(data => setDeck(data))
+        .catch(error => console.error("Error fetching deck:", error));
         readCard(params.cardId)
-            .then(cardData => setCard(cardData));
+            .then(data => setCard(data));
     }, [params.deckId, params.cardId]);
+    
 
+
+//------------------------------------------------------------------------
     const history = useHistory()
   
     function handleDone(){
       history.goBack();
     }
+//------------------------------------------------------------------------
 
     // Define handleChange function to update card state when input values change
     const handleChange = ({ target }) => {
@@ -37,11 +47,22 @@ function EditCard(){
     const handleSubmit = (event) => {
         event.preventDefault();
         updateCard(card.id, card)
-            .then(() => {
+            .then(() => 
                 // back to the previous page
-                handleDone();
-            })
+                handleDone()
+            )
+            .catch(error => {
+                console.error("Error updating card:", error);
+                if (error.json) {
+                  return error.json().then(err => {
+                    console.log("Error details:", err);
+                  });
+                } else {
+                  console.log("Error details:", error.message);
+                }
+              });
     }
+//------------------------------------------------------------------------
 
     return(
         <>
@@ -64,7 +85,10 @@ function EditCard(){
           </li>
         </ol>
       </nav>
-             {/* Display deck name in heading */}
+
+------------------------------------------------------------------------
+
+             {/* need deck name  */}
       <h3>{deck.name}: Add Card</h3>
       {/* Form for new card */}
       <form onSubmit={handleSubmit}>
@@ -87,9 +111,10 @@ function EditCard(){
               value={card.back}
             />
          
-     
+{/* ------------------------------------------------------------------------ */}
+
         {/* Save button to submit form */}
-        <button onSubmit={handleSubmit} className="btn btn-primary mt-2" >
+        <button type = "submit" className="btn btn-primary mt-2" >
           Save
         </button>
       </form>

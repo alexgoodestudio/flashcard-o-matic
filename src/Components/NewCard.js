@@ -16,7 +16,7 @@ function NewCard() {
   const [deck, setDeck] = useState({});
   const [card, setCard] = useState({ front: "", back: "" });
 
-  // Use useEffect hook to fetch deck data when component mounts
+  // useEffect hook to fetch deck data when component mounts
   useEffect(() => {
     // Call readDeck function and handle promise
     readDeck(deckId)
@@ -27,7 +27,7 @@ function NewCard() {
 
   }, [deckId]);
 
-  // Define handleChange function to update card state when input values change
+  // update card state when input values change
   const handleChange = ({ target }) => {
     setCard({
       ...card,
@@ -35,7 +35,7 @@ function NewCard() {
     });
   };
 
-  // Define handleSubmit function to create new card when form is submitted
+  //  function creates new card when form is submitted
   const handleSubmit = async (event) => {
     // Prevent default form submission behavior
     event.preventDefault();
@@ -50,10 +50,9 @@ function NewCard() {
     }
   };
 
-  // Return JSX for NewCard component
   return (
     <>
-      {/* Display deck name in heading */}
+
       <h3>{deck.name}: Add Card</h3>
       {/* Form for new card */}
       <form onSubmit={handleSubmit}>
@@ -79,7 +78,7 @@ function NewCard() {
             />
          
      
-        {/* Save button to submit form */}
+        {/* need save button to submit form */}
         <button type="submit" className="btn btn-primary mt-2">
           Save
         </button>
@@ -90,5 +89,4 @@ function NewCard() {
   );
 }
 
-// Export NewCard component
 export default NewCard;

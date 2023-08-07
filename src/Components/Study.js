@@ -7,11 +7,14 @@ function Study() {
     const { deckId } = useParams();
     const [deck, setDeck] = useState({});
     const history = useHistory()
+
+    //sets an initial state as an object
     const initialState = {
         index:0,
         flipped: false,
         viewed: false
     }
+
     const [session, setSession] = useState({...initialState})
     
     const handleFlipped = event => {
@@ -21,7 +24,7 @@ function Study() {
             viewed: true
         })
     }
-    
+// function for incrementing through cards by means up increasing state + 1
     const handleNext = event => {
         setSession({
             ...session,
@@ -30,7 +33,7 @@ function Study() {
             viewed: false
         })
     }
-
+// if reset it will display the initial state of cards/ otherwise pushes to home page
     const handleReset = () => {
         window.confirm(`Reset?`)
         ? setSession(initialState)

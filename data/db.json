@@ -2,7 +2,7 @@
   "decks": [
     {
       "name": "React Router",
-      "description": "React Router is a collection of navigational components that compose declaratively with your a",
+      "description": "React Router is a collection of navigational components that compose declaratively with your aasdasdasda",
       "id": 2
     },
     {
@@ -29,7 +29,7 @@
   "cards": [
     {
       "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
-      "back": "All paths. A route with no path matches all ",
+      "back": "All paths. A route with no path matches all asdasd",
       "deckId": 2,
       "id": 4
     },

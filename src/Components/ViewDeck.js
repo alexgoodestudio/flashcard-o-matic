@@ -80,7 +80,7 @@ function ViewDeck() {
       <button className="btn btn-danger float-right oi oi-trash" onClick={handleDelete} title="Delete deck"></button>
       {deck.cards.map((card) =>
 
-        <div className="container card mt-4 p-4">
+        <div className="container card mt-4 p-4" key={deck.cards.id}>
           <div className="row">
             <div className="col-5">
           {card.front}

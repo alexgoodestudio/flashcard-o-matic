@@ -6,34 +6,34 @@ import DeckForm from "./DeckForm";
 import { Link } from 'react-router-dom';
 
 function NewDeck(){
-    const history = useHistory()
+    const history = useHistory();
 
     function handleCancel(){
         history.goBack();
     }
 
     function handleSubmit(deck){
-        createDeck(deck).then((savedDeck) => history.push(`/decks/${savedDeck.id}`) )
+        createDeck(deck).then((savedDeck) => history.push(`/decks/${savedDeck.id}`));
     }
 
-    return(
-        <div className="">  
-
-          <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item">
-              <Link to="/" className="btn btn-link">Home</Link>
-              <p className="mt-2">{` / Create Deck`}</p>
-            </li>
-          </ol>
-        </nav>
+    return (
+        <div className="">
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
+                        <Link to="/" className="btn btn-link">
+                            <span>Home</span>
+                        </Link>
+                        <span className="mt-2"> Create Deck</span>
+                    </li>
+                </ol>
+            </nav>
             <DeckForm 
                 onSubmit={handleSubmit}
                 onCancel={handleCancel}
             />
-
-         </div>
-    )
+        </div>
+    );
 }
-export default NewDeck
+export default NewDeck;
 

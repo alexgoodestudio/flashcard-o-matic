@@ -22,8 +22,12 @@ function Home() {
     }
     const displayDeck = decks.map((d) => {
         return (
+            
             <div className="p-4 card" key={d.id}>
-                <h4>{d.name}</h4>
+                <h4 className="">{d.name}</h4>
+                <p className="text-muted d-flex">
+  {d.cards.length === 1 ? `${d.cards.length} card` : `${d.cards.length} cards`}
+</p>
                 <p> {d.description}</p>
                 <div className="d-flex">
                     <Link to={`/decks/${d.id}`} className="p-2"><button className=" btn btn-secondary">View</button></Link>

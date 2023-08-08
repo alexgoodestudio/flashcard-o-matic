@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Breadcrumb from "./Breadcrumb";
 import { readDeck } from "../utils/api";
-import { useParams,  useHistory } from "react-router-dom";
+import { useParams,  useHistory, Link } from "react-router-dom";
 
 function Study() {
     const { deckId } = useParams();
@@ -46,9 +46,25 @@ function Study() {
     }, [deckId]);
 
 
+  
     if (!deck.cards) return <p>Loading...</p>;
+    
+    if(deck.cards.length <= 2){
+     return (
+        <div className="container ">
+            <h2 className="text-center">{deck.name}</h2>
+            <h2>Not enough cards.</h2>
+            <p>
+                "You need at least 3 cards to study. There are {deck.cards.length} cards in this deck."
+            </p>
+         
+            <Link to={`/decks/${deckId}/cards/new`} className="btn btn-primary">
+                <span className="oi oi-plus" /> Add Cards
+            </Link>
+        </div>
+        )
+    }
 
-    const card = deck.cards[session.index];
 
     return (
         <div>

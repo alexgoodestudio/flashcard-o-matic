@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import Home from "../Home/Home"
+import Home from "../Home/Home";
 import NotFound from "./NotFound";
 import Study from "../Components/Study";
 import { Route, Switch } from "react-router-dom";
@@ -12,10 +12,12 @@ import NewCard from "../Components/NewCard"
 
 function Layout() {
   return (
-    <>
+    <div>
       <Header />
       <div className="container ">
         <Switch>
+
+        <Route exact path="/"> <Home /> </Route>
 
             <Route path="/decks/new"> <CreateDeck /> </Route>
 
@@ -28,14 +30,12 @@ function Layout() {
             <Route path="/decks/:deckId/cards/:cardId/edit"> <EditCard /> </Route>
 
             <Route path="/decks/:deckId/cards/new"> <NewCard /> </Route>
-            
-            <Route exact path="/"> <Home /> </Route>
 
             <Route > <NotFound /> </Route>
 
         </Switch>
       </div>
-    </>
+    </div>
   );
 }
 

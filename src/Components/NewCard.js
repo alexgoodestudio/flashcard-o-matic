@@ -51,9 +51,11 @@ function NewCard() {
   };
 
   return (
-    <>
+    <React.Fragment>
 
-      <h3>{deck.name}: Add Card</h3>
+      <h3>{`${deck.name}`} </h3>
+      <h3> Add Card </h3>
+ 
       {/* Form for new card */}
       <form onSubmit={handleSubmit}>
        
@@ -85,7 +87,7 @@ function NewCard() {
       </form>
       {/* Done button outside form */}
       <button className="btn btn-secondary mt-2" onClick={handleDone}>Done</button>
-    </>
+    </React.Fragment>
   );
 }
 

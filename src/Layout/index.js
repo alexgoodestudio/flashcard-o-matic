@@ -7,8 +7,9 @@ import { Route, Switch } from "react-router-dom";
 import CreateDeck from "../Components/NewDeck";
 import EditDeck from "../Components/EditDeck";
 import ViewDeck from "../Components/ViewDeck";
-import EditCard from "../Components/EditCard"
-import NewCard from "../Components/NewCard"
+// import EditCard from "../Components/EditCard"
+// import NewCard from "../Components/NewCard"
+import CardForm from "../Components/CardForm";
 
 function Layout() {
   return (
@@ -27,9 +28,9 @@ function Layout() {
 
             <Route exact path="/decks/:deckId"><ViewDeck /></Route>
 
-            <Route path="/decks/:deckId/cards/:cardId/edit"> <EditCard /> </Route>
+            <Route path="/decks/:deckId/cards/:cardId/edit"> <CardForm /> </Route>
 
-            <Route path="/decks/:deckId/cards/new"> <NewCard /> </Route>
+            <Route path="/decks/:deckId/cards/new"> <CardForm /> </Route>
 
             <Route > <NotFound /> </Route>
 

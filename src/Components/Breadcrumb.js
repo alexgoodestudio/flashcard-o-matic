@@ -10,7 +10,7 @@ function Breadcrumb({deckName}){
             <li className="breadcrumb-item">
               <Link to="/" className="btn btn-link">Home</Link>
               <Link to="/decks/:deckId/study" className="btn btn-link">{deckName} </Link>
-              <Link to="/decks/:deckId/study" className="btn btn-link">Study</Link>
+              <p className="breadcrumb-item active">Study</p>
 
             </li>
           </ol>

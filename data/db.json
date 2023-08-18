@@ -24,6 +24,11 @@
       "name": "asd",
       "description": "asd",
       "id": 7
+    },
+    {
+      "name": "deck1",
+      "description": "spades",
+      "id": 8
     }
   ],
   "cards": [
@@ -82,16 +87,142 @@
       "id": 15
     },
     {
-      "front": "",
-      "back": "",
+      "front": "javar",
+      "back": "alex",
       "deckId": 2,
       "id": 16
+    },
+    {
+      "front": "a",
+      "back": "a",
+      "deckId": 2,
+      "id": 17
     },
     {
       "front": "",
       "back": "",
       "deckId": 2,
-      "id": 17
+      "id": 18
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 19
+    },
+    {
+      "front": "aa",
+      "back": "aa",
+      "deckId": 2,
+      "id": 20
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 21
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 22
+    },
+    {
+      "front": "newcard",
+      "back": "newcard",
+      "deckId": 2,
+      "id": 23
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 24
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 25
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 26
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 27
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 28
+    },
+    {
+      "front": "asdasdasd",
+      "back": "asdasda",
+      "deckId": 5,
+      "id": 29
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 5,
+      "id": 30
+    },
+    {
+      "front": "asdasda",
+      "back": "asdasdasd",
+      "deckId": 5,
+      "id": 31
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 5,
+      "id": 32
+    },
+    {
+      "front": "im front",
+      "back": "back",
+      "deckId": 8,
+      "id": 33
+    },
+    {
+      "front": "hello",
+      "back": "goodbywe",
+      "deckId": 2,
+      "id": 34
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 35
+    },
+    {
+      "front": "a",
+      "back": "c",
+      "deckId": 2,
+      "id": 36
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 37
+    },
+    {
+      "front": "a",
+      "back": "b",
+      "deckId": 2,
+      "id": 38
     }
   ]
 }

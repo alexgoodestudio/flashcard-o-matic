@@ -68,7 +68,7 @@ function Study() {
 
     return (
         <div>
-            <Breadcrumb deckName={deck.name} />
+            <Breadcrumb deckName={deck.name} deckId={deck.id} />
           
             <h2>Study: {deck.name}</h2>
             <div className="card-deck justify-content-center  mt-4 w-100">

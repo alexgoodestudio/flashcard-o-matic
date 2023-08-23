@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { readDeck, readCard, updateCard } from '../utils/api'
-import { Link, useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import CardForm from './CardForm'
 
 
@@ -18,11 +18,14 @@ function EditCard(){
 // useEffect(readDeck().then )
     // need useEffect to use readDeck, and readCard
     useEffect(() => {
+      
         // Fetch the deck and card data when the component mounts
         readDeck(deckId)
+        
         .then(data => setDeck(data))
         .catch(error => console.error("Error fetching deck:", error));
         readCard(cardId)
+        
             .then(data => setCard(data));
     }, [deckId, cardId]);
     

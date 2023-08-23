@@ -3,6 +3,22 @@ import { Link } from 'react-router-dom';
 
 function CardForm({card, deck, handleSubmit, cardId, handleDone, handleChange}) {
 
+  // const [card, setCard] = useState(initialFormState)
+
+  // function handleChange(event){
+  //     const {target} = event
+  //     const {name, value} = target
+  //     setCard((previousState) =>({
+  //         ...previousState,
+  //         [name]:value
+  //     }))
+  // }
+
+  // function handleSubmit(event){
+  //     event.preventDefault()
+  //     onSubmit(deck);
+  // }
+
   return (
     <>
          <nav aria-label="breadcrumb">

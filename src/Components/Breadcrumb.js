@@ -9,9 +9,8 @@ console.log(deckId,"!!!!!!!!!!!")
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
               <Link to="/" className="btn btn-link">Home</Link>
-              <Link to={`/decks/${deckId}/`} className="btn btn-link">{deckName} </Link>
-              <p className="breadcrumb-item active">Study</p>
-
+              <Link to={`/decks/${deckId}/`} className="btn btn-link ">{deckName} </Link>
+              <Link to={`/decks/${deckId}/`} className="btn btn-link breadcrumb-item active ">Study </Link>
             </li>
           </ol>
         </nav>

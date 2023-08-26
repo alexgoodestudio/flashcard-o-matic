@@ -14,36 +14,6 @@
       "name": "Rendering in React",
       "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. ",
       "id": 5
-    },
-    {
-      "name": "asdasd",
-      "description": "asdasdasdasdasd!!!!",
-      "id": 6
-    },
-    {
-      "name": "asd",
-      "description": "asd",
-      "id": 7
-    },
-    {
-      "name": "deck1",
-      "description": "spades",
-      "id": 8
-    },
-    {
-      "name": "qw",
-      "description": "qw",
-      "id": 9
-    },
-    {
-      "name": "ADSFDASF",
-      "description": "ASDFASDF",
-      "id": 10
-    },
-    {
-      "name": "ASDFASDF",
-      "description": "ASDFASDF",
-      "id": 11
     }
   ],
   "cards": [
@@ -82,18 +52,6 @@
       "back": "asdasd",
       "deckId": 5,
       "id": 12
-    },
-    {
-      "front": "asdasd",
-      "back": "asdasdasd",
-      "deckId": 6,
-      "id": 13
-    },
-    {
-      "front": "asdasdasd",
-      "back": "",
-      "deckId": 6,
-      "id": 14
     },
     {
       "front": "asdasdasd",
@@ -204,12 +162,6 @@
       "id": 32
     },
     {
-      "front": "im front",
-      "back": "back",
-      "deckId": 8,
-      "id": 33
-    },
-    {
       "front": "hello",
       "back": "goodbywe",
       "deckId": 2,
@@ -238,36 +190,6 @@
       "back": "b",
       "deckId": 2,
       "id": 38
-    },
-    {
-      "front": "qw",
-      "back": "qw",
-      "deckId": 9,
-      "id": 39
-    },
-    {
-      "front": "asd",
-      "back": "asd",
-      "deckId": 9,
-      "id": 40
-    },
-    {
-      "front": "asasdasda",
-      "back": "asdasda",
-      "deckId": 9,
-      "id": 41
-    },
-    {
-      "front": "ASDFASDFASDFAASDFSDF",
-      "back": "FASDFASFDASDFASDFASDFASDF",
-      "deckId": 11,
-      "id": 42
-    },
-    {
-      "front": "ASDFASDF",
-      "back": "ASDFASDF",
-      "deckId": 11,
-      "id": 43
     }
   ]
 }

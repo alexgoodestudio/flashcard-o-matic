@@ -3,12 +3,31 @@ import { Link } from "react-router-dom";
 import { deleteDeck, listDecks } from "../utils/api";
 
 function Home() {
-
+    let [error, setError] = useState(null);
     let [decks, setDecks] = useState([]);
+    let [isLoaded, setIsLoaded]=useState(true)
+//set a boolean called isLoaded
+useEffect(() => {
+    // after listDecks is loaded flip value of "isLoaded" via setIsLoaded
+    getDecks()
 
-    useEffect(() => {
-        listDecks().then(data => setDecks(data));
-    }, [])
+}, []);
+
+    async function getDecks(){
+        const abortController = new AbortController()
+        try{
+            const response = await listDecks()
+            console.log(response,"response")
+            setDecks(response)
+            setIsLoaded(false)
+        }catch(error){
+            console.log(error)
+            setError(error);
+        }
+        return () => {
+            AbortController.abort()
+        }
+    }
 
     function handleDelete(deckIdToDelete) {
         const confirmed = window.confirm(
@@ -44,9 +63,17 @@ function Home() {
 
 
     return (
+        //if "loaded", displayDeck else: display "loading"
         <article>
+        {isLoaded ? (
+            <p>. . . Loading </p>
+          ) : (
+            <>
             <Link to={`/decks/new`}><button className="btn btn-secondary mb-1 " >+ Create Deck</button></Link>
             {displayDeck}
+            </>
+          )}
+
         </article>
     )
 }

@@ -26,7 +26,7 @@ function CardForm({card, deck, handleSubmit, cardId, handleDone, handleChange}) 
             <li className="breadcrumb-item">
               <Link to="/" className="btn btn-link">Home</Link>
               <Link to="/decks/:deckId/study" className="btn btn-link"> {deck.name} </Link>
-              <Link to="/decks/:deckId/study" className="breadcrumb-item active"> Add Card</Link>
+              <Link to="/decks/:deckId/study" className="btn btn-link breadcrumb-item active"> Add Card</Link>
             </li>
           </ol>
         </nav>

@@ -1,28 +1,27 @@
 {
   "decks": [
     {
-      "name": "React Router",
-      "description": "React Router is a collection of navigational components that compose declaratively with your aasdasdasda",
+      "name": "React ",
+      "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page, mobile, or server-rendered applications with",
       "id": 2
     },
     {
       "id": 3,
-      "name": "HTML/CSS/Javascript",
-      "description": "LoremText"
+      "name": "HTML/ CSS/ Javascript",
+      "description": "Basic Software Engineering "
     },
     {
       "name": "Rendering in React",
       "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. ",
       "id": 5
+    },
+    {
+      "name": "THANK ",
+      "description": "YOU!",
+      "id": 6
     }
   ],
   "cards": [
-    {
-      "front": "What path will match the follow Route?!!!a\n<Route>!!!\n  <NotFound />\n</Route>",
-      "back": "All paths. A route with no path matches all asdasd!!!!!!!!!a",
-      "deckId": 2,
-      "id": 4
-    },
     {
       "front": "Differentiate between Real DOM and Virtual DOM.",
       "back": "Virtual DOM updates are faster but do not directly update the HTML",
@@ -36,14 +35,14 @@
       "id": 7
     },
     {
-      "front": "asdasdas",
-      "back": "dasdasdasd",
+      "front": "What is the ‘class’ attribute in HTML?",
+      "back": "The class attribute is used to specify the class name for an HTML element. Multiple elements in HTML can have the same class value. Also, it is mainly used to associate the styles written in the stylesheet with the HTML elements.\n\n",
       "deckId": 3,
       "id": 8
     },
     {
-      "front": "asdasdasd",
-      "back": "asdasdasdasd",
+      "front": "What is the significance of <head> and <body> tag in HTML?",
+      "back": "<head> tag provides the information about the document. It should always be enclosed in the <html> tag. This tag contains the metadata about the webpage and the tags which are enclosed by head tag like <link>, <meta>, <style>, <script>, etc. are not displayed on the web page. Also, there can be only 1 <head> tag in the entire Html document and will always be before the <body> tag.\n\n<body> tag defines the body of the HTML document. It should always be enclosed in the <html> tag. All the contents which needs to be displayed on the web page like images, text, audio, video, contents, using elements like <p>, <img>, <audio>, <heading>, <video>, <div>, etc. will always be enclosed by the <body> tag. Also, there can be only 1 body element in an HTML document and will always be after the <head> tag.\n\n",
       "deckId": 3,
       "id": 10
     },
@@ -54,88 +53,10 @@
       "id": 12
     },
     {
-      "front": "asdasdasd",
-      "back": "aasdasdasd",
-      "deckId": 2,
-      "id": 15
-    },
-    {
-      "front": "javar",
-      "back": "alex",
+      "front": "What is the virtual DOM?",
+      "back": "DOM stands for Document Object Model. The DOM represents an HTML document with a logical tree structure. Each branch of the tree ends in a node, and each node contains objects.",
       "deckId": 2,
       "id": 16
-    },
-    {
-      "front": "a",
-      "back": "a",
-      "deckId": 2,
-      "id": 17
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 18
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 19
-    },
-    {
-      "front": "aa",
-      "back": "aa",
-      "deckId": 2,
-      "id": 20
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 21
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 22
-    },
-    {
-      "front": "newcard",
-      "back": "newcard",
-      "deckId": 2,
-      "id": 23
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 24
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 25
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 26
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 27
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 28
     },
     {
       "front": "asdasdasd",
@@ -162,34 +83,22 @@
       "id": 32
     },
     {
-      "front": "hello",
-      "back": "goodbywe",
-      "deckId": 2,
-      "id": 34
+      "front": "Is it possible to change an inline element into a block level element?",
+      "back": "Yes, it is possible using the “display” property with its value as “block”, to change the inline element into a block-level element.",
+      "deckId": 3,
+      "id": 39
     },
     {
-      "front": "",
-      "back": "",
+      "front": "Why is there a need for using keys in Lists?",
+      "back": "A key is a unique identifier and it is used to identify which items have changed, been updated or deleted from the lists\nIt also helps to determine which components need to be re-rendered instead of re-rendering all the components every time. Therefore, it increases performance, as only the updated components are re-rendered",
       "deckId": 2,
-      "id": 35
+      "id": 41
     },
     {
-      "front": "a",
-      "back": "c",
+      "front": "What is an event in React?",
+      "back": "An event is an action that a user or system may trigger, such as pressing a key, a mouse click, etc.",
       "deckId": 2,
-      "id": 36
-    },
-    {
-      "front": "",
-      "back": "",
-      "deckId": 2,
-      "id": 37
-    },
-    {
-      "front": "a",
-      "back": "b",
-      "deckId": 2,
-      "id": 38
+      "id": 42
     }
   ]
 }

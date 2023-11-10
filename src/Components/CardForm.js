@@ -1,37 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function CardForm({card, deck, handleSubmit, cardId, handleDone, handleChange}) {
-
-  // const [card, setCard] = useState(initialFormState)
-
-  // function handleChange(event){
-  //     const {target} = event
-  //     const {name, value} = target
-  //     setCard((previousState) =>({
-  //         ...previousState,
-  //         [name]:value
-  //     }))
-  // }
-
-  // function handleSubmit(event){
-  //     event.preventDefault()
-  //     onSubmit(deck);
-  // }
+function CardForm({ card, deck, handleSubmit, cardId, handleDone, handleChange }) {
 
   return (
     <>
-         <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item">
-              <Link to="/" className="btn btn-link">Home</Link>
-              <Link to="/decks/:deckId/study" className="btn btn-link"> {deck.name} </Link>
-              <Link to="/decks/:deckId/study" className="btn btn-link breadcrumb-item active"> Add Card</Link>
-            </li>
-          </ol>
-        </nav>
-    
-    <h2> {deck.name}: {cardId ? "" : "Add Card"}</h2>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <Link to="/" className="btn btn-link">Home</Link>
+            <Link to="/decks/:deckId/study" className="btn btn-link"> {deck.name} </Link>
+            <Link to="/decks/:deckId/study" className="btn btn-link breadcrumb-item active"> Add Card</Link>
+          </li>
+        </ol>
+      </nav>
+
+      <h2> {deck.name}: {cardId ? "" : "Add Card"}</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="front">Front</label>
         <textarea

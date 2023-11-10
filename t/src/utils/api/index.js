@@ -60,7 +60,7 @@ async function fetchJson(url, options, onCancel) {
       console.error(error.stack);
       throw error;
     }
-    return Promise.resolve(onCancel);
+    return Promise.resolve();
   }
 }
 

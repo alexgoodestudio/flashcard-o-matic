@@ -66,7 +66,7 @@ useEffect(() => {
         //if "loaded", displayDeck else: display "loading"
         <article>
         {isLoaded ? (
-            <p>. . . Loading </p>
+            <p>Loading.</p>
           ) : (
             <>
             <Link to={`/decks/new`}><button className="btn btn-secondary mb-1 " >+ Create Deck</button></Link>

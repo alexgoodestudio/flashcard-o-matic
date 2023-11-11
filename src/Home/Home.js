@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { deleteDeck, listDecks } from "../utils/api";
+import "../Layout/header.css"
 
 function Home() {
     let [error, setError] = useState(null);
@@ -42,13 +43,13 @@ useEffect(() => {
     const displayDeck = decks.map((d) => {
         return (
             
-            <div className="p-4 card" key={d.id}>
-                <h4 className="">{d.name}</h4>
+            <div className="p-4 card full" key={d.id}>
+                <h4 className="full2">{d.name}</h4>
                 <p className="text-muted d-flex">
   {d.cards.length === 1 ? `${d.cards.length} card` : `${d.cards.length} cards`}
 </p>
                 <p> {d.description}</p>
-                <div className="d-flex">
+                <div className="d-flex ">
                     <Link to={`/decks/${d.id}`} className="p-2"><button className=" btn btn-secondary">View</button></Link>
                     <Link to={`/decks/${d.id}/study`} className="p-2"><button className=" btn btn-primary">Study</button></Link>
 
@@ -64,7 +65,7 @@ useEffect(() => {
 
     return (
         //if "loaded", displayDeck else: display "loading"
-        <article>
+        <article >
         {isLoaded ? (
             <p>Loading.</p>
           ) : (

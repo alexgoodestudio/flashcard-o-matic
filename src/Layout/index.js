@@ -9,10 +9,11 @@ import EditDeck from "../Components/EditDeck";
 import ViewDeck from "../Components/ViewDeck";
 import EditCard from "../Components/EditCard"
 import NewCard from "../Components/NewCard"
+import "./header.css"
 
 function Layout() {
   return (
-    <div>
+    <div className="full">
       <Header />
       <div className="container ">
         <Switch>

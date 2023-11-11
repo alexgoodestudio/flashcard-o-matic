@@ -6,7 +6,7 @@ function Header() {
   return (
     <>
 
-      <img src={image1} alt="banner" className="w-100 mb-5 mq"/>
+      <img src={image1} alt="banner" className="w-100 mb-5 "/>
       {/* <div className="container text-white">
         <h1 className="display-4">Flashcard-o-matic</h1>
         <p className="lead">Discover The Flashcard Difference.</p>

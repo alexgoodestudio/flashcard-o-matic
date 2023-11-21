@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
 
 function CardForm({ card, deck, handleSubmit, cardId, handleDone, handleChange }) {
-
+  const deckId = deck.id
+  console.log("DECKIDDDD",deckId)
   return (
     <>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
             <Link to="/" className="btn btn-link">Home</Link>
-            <Link to="/decks/:deckId/study" className="btn btn-link"> {deck.name} </Link>
+            <Link to={`/`} className="btn btn-link"> {deck.name} </Link>
             <Link to="/decks/:deckId/study" className="btn btn-link breadcrumb-item active"> Add Card</Link>
           </li>
         </ol>

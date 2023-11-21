@@ -42,7 +42,9 @@ function DeckForm({
                     <button type="button" className="btn btn-secondary mr-2" onClick={onCancel}>Cancel</button>
                     <button type="submit" className="btn btn-primary">Submit</button>
 
-                </fieldset>       
+                </fieldset>   
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+ 
             </form>
          </>
     )

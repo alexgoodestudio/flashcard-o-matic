@@ -71,8 +71,8 @@ function EditCard(){
 //------------------------------------------------------------------------
 
     return(
-     <CardForm card={card} deck={deck} cardId={cardId} handleSubmit={handleSubmit} handleChange={handleChange} handleDone={handleDone} />
-        
+     <CardForm card={card} deck={deck} cardId={cardId} handleSubmit={handleSubmit} handleChange={handleChange} handleDone={handleDone}  />
+    
     )
 
 }

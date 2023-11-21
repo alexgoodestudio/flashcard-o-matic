@@ -35,6 +35,9 @@ function CardForm({ card, deck, handleSubmit, cardId, handleDone, handleChange }
         />
         <button type="submit" className="btn btn-primary mt-2" onClick={handleDone}>Save</button>
         <button className="btn btn-secondary mt-2" onClick={handleDone}>{cardId ? "Done" : "Cancel"}</button>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
       </form>
     </>
   );

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams, useLocation } from "react-router-dom";
 import { deleteDeck, deleteCard, readDeck } from "../utils/api";
 
 function ViewDeck() {
   const history = useHistory();
+  const location = useLocation();
 
   const { deckId } = useParams();
   const [deck, setDeck] = useState({ cards: [] });
 
-  useEffect(loadDeck, [deckId]);
+  useEffect(loadDeck, [deckId, location]);
 
   function loadDeck() {
     readDeck(deckId).then(setDeck);
@@ -80,7 +81,7 @@ function ViewDeck() {
       <button className="btn btn-danger float-right oi oi-trash" onClick={handleDelete} title="Delete deck"></button>
       {deck.cards.map((card) =>
 
-        <div className="container card mt-4 p-4" key={card.id}>
+        <div className="container card mt-4  p-4" key={card.id}>
           <div className="row">
             <div className="col-5">
           {card.front}
@@ -93,9 +94,11 @@ function ViewDeck() {
             <button className="btn btn-danger mb-2 oi oi-trash " onClick={() => deletingCard(card.id)}  ></button>
             <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary">Edit</Link>
           </div>
+          
         </div>
 
       )}
+      <br/><br/><br/>
     </main>
   )
 }

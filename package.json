@@ -12,7 +12,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0"
   },
+  "homepage": "https://alexgoodestudio.github.io/flashcard-o-matic/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "docker:build": "docker image build . -t thinkful-ed/zid-fe-project-flashcards-01-qualified",
     "docker:run": "docker run --rm -it -p 3000:3000 thinkful-ed/zid-fe-project-flashcards-01-qualified",
@@ -43,6 +46,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
+    "gh-pages": "^6.1.1",
     "json-server": "^0.16.1"
   }
 }

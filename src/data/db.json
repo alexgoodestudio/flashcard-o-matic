@@ -2,52 +2,242 @@
   "decks": [
     {
       "id": 1,
-      "name": "Rendering in React",
-      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. "
+      "name": "Lambda",
+      "description": "Covers AWS Lambda, a serverless computing service that runs code in response to events."
     },
     {
-      "name": "React Router",
-      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
-      "id": 2
+      "id": 2,
+      "name": "EC2/EBS",
+      "description": "Explores Amazon EC2 (Elastic Compute Cloud) and EBS (Elastic Block Store), crucial components of AWS's cloud computing platform."
+    },
+    {
+      "id": 3,
+      "name": "Elastic Beanstalk",
+      "description": "Focuses on AWS Elastic Beanstalk, an orchestration service for deploying applications which automates the deployment of applications in the AWS Cloud."
+    },
+    {
+      "id": 4,
+      "name": "S3",
+      "description": "Delves into Amazon S3, AWS's scalable storage solution."
+    },
+    {
+      "id": 5,
+      "name": "DynamoDB",
+      "description": "Covers Amazon DynamoDB, a NoSQL database service for all scale applications."
+    },
+    {
+      "id": 6,
+      "name": "IAM",
+      "description": "Introduces AWS Identity and Access Management (IAM), which helps securely control access to AWS resources."
+    },
+    {
+      "id": 7,
+      "name": "VPC",
+      "description": "Discusses Amazon Virtual Private Cloud (VPC), offering a logically isolated section of the AWS cloud."
+    },
+    {
+      "id": 8,
+      "name": "CloudFormation",
+      "description": "Explores AWS CloudFormation, a service that helps model and set up AWS resources so you can spend less time managing those resources and more time focusing on your applications."
+    },
+    {
+      "id": 9,
+      "name": "CloudWatch",
+      "description": "Covers Amazon CloudWatch, a monitoring and observability service."
+    },
+    {
+      "id": 10,
+      "name": "SNS",
+      "description": "Focuses on Amazon Simple Notification Service (SNS), a managed service that provides message delivery from publishers to subscribers (also known as producers and consumers)."
+    },
+    {
+      "id": 11,
+      "name": "SQS",
+      "description": "Discusses Amazon Simple Queue Service (SQS), a fully managed message queuing service."
+    },
+    {
+      "id": 12,
+      "name": "RDS",
+      "description": "Explores Amazon Relational Database Service (RDS), making it easy to set up, operate, and scale a relational database."
+    },
+    {
+      "id": 13,
+      "name": "Route 53",
+      "description": "Covers AWS Route 53, a highly available and scalable cloud Domain Name System (DNS) web service."
+    },
+    {
+      "id": 14,
+      "name": "API Gateway",
+      "description": "Focuses on Amazon API Gateway, a service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale."
+    },
+    {
+      "id": 15,
+      "name": "ECS",
+      "description": "Discusses Amazon Elastic Container Service (ECS), a highly scalable, high-performance container management service."
     }
   ],
   "cards": [
     {
       "id": 1,
-      "front": "Differentiate between Real DOM and Virtual DOM.",
-      "back": "Virtual DOM updates are faster but do not directly update the HTML",
+      "front": "What is AWS Lambda and when should it be used?",
+      "back": "AWS Lambda lets you run code without provisioning or managing servers, ideal for applications with variable usage.",
       "deckId": 1
     },
     {
       "id": 2,
-      "front": "How do you modify the state of a different React component?",
-      "back": "Not at all! State is visible to the component only.",
-      "deckId": 1
+      "front": "Difference between EC2 and EBS?",
+      "back": "EC2 provides scalable computing capacity. EBS provides persistent block storage volumes for EC2 instances.",
+      "deckId": 2
     },
     {
       "id": 3,
-      "front": "How do you pass data 'down' to a React child component?",
-      "back": "As properties or props",
+      "front": "How does Elastic Beanstalk facilitate application deployment?",
+      "back": "It automates server provisioning, load balancing, auto-scaling, and application deployment, significantly simplifying the process.",
+      "deckId": 3
+    },
+    {
+      "id": 4,
+      "front": "What are the key features of Amazon S3?",
+      "back": "High durability, availability, and scalability. It supports data analytics, and it's commonly used for backup and restore, disaster recovery, and data archiving.",
+      "deckId": 4
+    },
+    {
+      "id": 5,
+      "front": "Why use Amazon DynamoDB?",
+      "back": "For applications requiring a high-availability database with seamless scalability and low-latency data access.",
+      "deckId": 5
+    },
+    {
+      "id": 6,
+      "front": "Explain the core components of IAM.",
+      "back": "Users, groups, roles, and policy documents that define permissions.",
+      "deckId": 6
+    },
+    {
+      "id": 7,
+      "front": "What are the benefits of using VPC?",
+      "back": "It provides a secure, isolated section of the cloud where you can launch resources in a virtual network you define.",
+      "deckId": 7
+    },
+    {
+      "id": 8,
+      "front": "How does CloudFormation benefit AWS resource management?",
+      "back": "It allows you to model your entire infrastructure in a text file, making setup and management efficient and repeatable.",
+      "deckId": 8
+    },
+    {
+      "id": 9,
+      "front": "What does Amazon CloudWatch monitor?",
+      "back": "CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS and on-premises servers.",
+      "deckId": 9
+    },
+    {
+      "id": 10,
+      "front": "How does Amazon SNS work?",
+      "back": "SNS allows you to decouple microservices, distributed systems, and serverless applications. It enables you to send notification messages to multiple subscribers through a push mechanism, supporting a variety of protocols such as HTTP, email, SMS, and SQS.",
+      "deckId": 10
+    },
+    {
+      "id": 11,
+      "front": "What is Amazon SQS and why use it?",
+      "back": "SQS is a message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It increases the reliability of message delivery.",
+      "deckId": 11
+    },
+    {
+      "id": 12,
+      "front": "Benefits of using Amazon RDS?",
+      "back": "RDS makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching, and backups.",
+      "deckId": 12
+    },
+    {
+      "id": 13,
+      "front": "What is AWS Route 53 and its primary use?",
+      "back": "Route 53 is a highly available and scalable cloud DNS web service, designed to give developers and businesses an extremely reliable and cost-effective way to route end users to Internet applications.",
+      "deckId": 13
+    },
+    {
+      "id": 14,
+      "front": "How is Amazon API Gateway beneficial for developers?",
+      "back": "API Gateway allows developers to create, publish, maintain, monitor, and secure APIs at any scale. It acts as a front door to access data, business logic, or functionality from your back-end services.",
+      "deckId": 14
+    },
+    {
+      "id": 15,
+      "front": "Describe Amazon ECS.",
+      "back": "ECS is a container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances.",
+      "deckId": 15
+    },
+    {
+      "id": 16,
+      "front": "What are the different types of Lambda triggers?",
+      "back": "Common Lambda triggers include API Gateway, S3 events, DynamoDB triggers, and SNS notifications.",
       "deckId": 1
     },
     {
-      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
-      "back": "All paths. A route with no path matches all URL's",
-      "deckId": 2,
-      "id": 4
+      "id": 17,
+      "front": "How do you secure data in S3?",
+      "back": "Use bucket policies, ACLs, and server-side encryption (SSE) to secure your data in S3.",
+      "deckId": 4
     },
     {
-      "front": "What does <Switch> do?",
-      "back": "Renders the first matching child <Route> ",
-      "deckId": 2,
-      "id": 5
+      "id": 18,
+      "front": "What is the difference between SQS Standard and SQS FIFO queues?",
+      "back": "Standard queues offer maximum throughput, at-least-once delivery, and best-effort ordering. FIFO queues ensure messages are processed exactly once, in the exact order that they are sent.",
+      "deckId": 11
     },
     {
-      "cards": [],
-      "front": "b",
-      "back": "b",
-      "deckId": 1,
-      "id": 7
+      "id": 19,
+      "front": "How do you monitor AWS resources?",
+      "back": "Use Amazon CloudWatch to monitor your AWS resources and applications in real-time with metrics, logs, and alarms.",
+      "deckId": 9
+    },
+    {
+      "id": 20,
+      "front": "Explain the benefits of Elastic Load Balancing.",
+      "back": "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses, to increase the scalability and reliability of your application.",
+      "deckId": 2
+    },
+    {
+      "id": 21,
+      "front": "What is Amazon RDS Read Replica?",
+      "back": "Read Replicas in Amazon RDS provide enhanced performance for read-heavy database workloads by allowing you to create one or more read-only copies of your database instance.",
+      "deckId": 12
+    },
+    {
+      "id": 22,
+      "front": "Describe the purpose of AWS IAM roles.",
+      "back": "IAM roles allow you to delegate permissions to AWS services or users without having to share long-term access keys.",
+      "deckId": 6
+    },
+    {
+      "id": 23,
+      "front": "What are the core components of Amazon VPC?",
+      "back": "Subnets, Internet Gateways, Route Tables, Network ACLs, and Security Groups are core components of VPC.",
+      "deckId": 7
+    },
+    {
+      "id": 24,
+      "front": "How do you automate AWS deployments with CloudFormation?",
+      "back": "Use CloudFormation templates, JSON or YAML formatted text files, to model and provision all the AWS resources needed for your application across all regions and accounts.",
+      "deckId": 8
+    },
+    {
+      "id": 25,
+      "front": "What is AWS SNS used for?",
+      "back": "SNS is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.",
+      "deckId": 10
+    },
+    {
+      "id": 26,
+      "front": "What is Amazon API Gateway's role in microservices?",
+      "back": "API Gateway acts as a front door to applications, handling all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, authorization, and access control.",
+      "deckId": 14
+    },
+    {
+      "id": 27,
+      "front": "What are ECS task definitions?",
+      "back": "Task definitions are JSON text files in ECS that describe one or more containers that form your application. They include various settings like the Docker image to use, CPU and memory allocations, and more.",
+      "deckId": 15
     }
   ]
 }

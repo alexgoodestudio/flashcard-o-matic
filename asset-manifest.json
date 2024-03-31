@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/flashcard-o-matic/static/css/main.0e8c3a82.css",
+    "main.js": "/flashcard-o-matic/static/js/main.3bc8d72a.js",
+    "static/media/8.png": "/flashcard-o-matic/static/media/8.ddb464e47bd0f4c57a8d.png",
+    "index.html": "/flashcard-o-matic/index.html",
+    "main.0e8c3a82.css.map": "/flashcard-o-matic/static/css/main.0e8c3a82.css.map",
+    "main.3bc8d72a.js.map": "/flashcard-o-matic/static/js/main.3bc8d72a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e8c3a82.css",
+    "static/js/main.3bc8d72a.js"
+  ]
+}
